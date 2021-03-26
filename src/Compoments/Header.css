@@ -1,0 +1,28 @@
+.container {
+    height: 10vh;
+    background-color: #FF7A59;
+}
+
+.headingname {
+    display: inline;
+    margin-left: 38%;
+
+}
+
+.link-button {
+    background-color: #FFEDE9;
+    border-radius: 30px;
+    padding: 0.5rem;
+    margin: 10px 10px;
+    float: right;
+    color: #5568FA;
+    font-size: 1.5rem;
+    text-transform: none;
+    text-decoration: none;
+    color: #FF7A59;
+}
+
+.link-button:hover {
+    border: 2px solid red;
+    transition: 0.3s;
+}
