@@ -1,0 +1,30 @@
+.home-img {
+    width: 55%;
+    height: 75vh;
+    float: right;
+
+}
+
+.heading {
+    width: 35%;
+    float: left;
+    color: rgb(41, 41, 129);
+    font-size: 50px;
+    margin-left: 10%;
+}
+
+.btn {
+    padding: 5%;
+    font-size: 28px;
+    background-color: #263239;
+    color: #FCA312;
+    border-radius: 30px;
+}
+
+.btn:hover {
+    padding: 5%;
+    font-size: 28px;
+    background-color: white;
+    color: #263239;
+    border-radius: 30px;
+}
