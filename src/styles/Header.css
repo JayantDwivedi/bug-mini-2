@@ -1,4 +1,4 @@
-.container {
+.container-header {
     height: 10vh;
     background-color: #FF7A59;
 }
@@ -32,6 +32,18 @@
 }
 
 .link-button:hover {
-    border: 2px solid red;
-    transition: 0.3s;
+    background-color: white;
+    color: #FF7A59;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.link-heading {
+    text-decoration: none;
+    text-transform: none;
+}
+
+.link-heading:hover {
+    text-decoration: none;
+    text-transform: none;
 }

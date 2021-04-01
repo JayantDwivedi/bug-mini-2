@@ -16,11 +16,11 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <Home />
+        {/* <Home /> */}
         <Switch>
-          {/* <Route path="/" component={Home} /> */}
-          <Route path="/signin" component={Signin} />
-          <Route path="/signup" component={Signup} />
+          <Route path="/" exact component={Home} />
+          <Route path="/signin" exact component={Signin} />
+          <Route path="/signup" exact component={Signup} />
           {/* <Route path="*" component={Notfound} /> */}
         </Switch>
 

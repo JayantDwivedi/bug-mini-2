@@ -2,6 +2,7 @@
     width: 55%;
     height: 75vh;
     float: right;
+    margin-top: 5%;
 
 }
 
@@ -13,18 +14,22 @@
     margin-left: 10%;
 }
 
-.btn {
-    padding: 5%;
+.btn-getstarted {
+    padding: 3%;
     font-size: 28px;
     background-color: #263239;
     color: #FCA312;
     border-radius: 30px;
 }
 
-.btn:hover {
-    padding: 5%;
+.btn-getstarted:hover {
+    padding: 3%;
     font-size: 28px;
     background-color: white;
     color: #263239;
     border-radius: 30px;
+}
+
+main {
+    margin-top: 8%;
 }

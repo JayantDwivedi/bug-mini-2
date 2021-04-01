@@ -11,7 +11,7 @@ export default function Home() {
         <br />
         <p className="para">Collaborate with your team</p>
         <Link to="/signin">
-          <button className="btn">Get Started</button>
+          <button className="btn-getstarted">Get Started</button>
         </Link>
       </main>
       <img src={home} alt="home" className="home-img" />

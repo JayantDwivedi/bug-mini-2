@@ -1,0 +1,17 @@
+.signin-form {
+    width: 35%;
+    margin: 10% auto;
+    border: 2px solid black;
+    padding: 5%;
+    background-color: rgb(238, 232, 232);
+
+}
+
+.signup-form {
+    width: 35%;
+    margin: 5% auto;
+    border: 2px solid black;
+    padding: 5%;
+    background-color: rgb(238, 232, 232);
+
+}
