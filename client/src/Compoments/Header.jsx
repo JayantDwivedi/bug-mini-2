@@ -14,11 +14,11 @@ export default function Header() {
         <h1 className="headingname">Bug Tracker</h1>
       </Link>
 
-      <Link to="/signin" className="link-button">
-        Sign In
+      <Link to="/viewissue" className="link-button">
+        View Issues
       </Link>
-      <Link to="/signup" className="link-button">
-        Sign Up
+      <Link to="/createissue" className="link-button">
+        Create Issues
       </Link>
     </div>
   );

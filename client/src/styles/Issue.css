@@ -1,4 +1,4 @@
-.signin-form {
+.viewissue-form {
     width: 35%;
     margin: 10% auto;
     border: 2px solid black;
@@ -7,7 +7,7 @@
 
 }
 
-.signup-form {
+.createissue-form {
     width: 35%;
     margin: 5% auto;
     border: 2px solid black;

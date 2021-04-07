@@ -34,4 +34,13 @@ router.post('/signup', (req, res) => {
 
 });
 
+// router.get('/signin', (req, res) => {
+//     signup.find().exec().then(result => {
+//         console.log(result);
+//         res.status(200).send(result);
+//     }).catch(err => {
+//         res.status(500).send(err);
+//     })
+// })
+
 module.exports = router;

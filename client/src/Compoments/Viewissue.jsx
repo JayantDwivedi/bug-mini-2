@@ -1,11 +1,11 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button } from "react-bootstrap";
-import "../styles/Signin.css";
+import "../styles/Issue.css";
 
-const Signin = () => {
+const Viewissue = () => {
   return (
-    <div className="signin-form">
+    <div className="viewissue-form">
       <Form>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -24,4 +24,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Viewissue;
