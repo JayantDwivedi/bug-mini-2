@@ -5,39 +5,17 @@ import { useState } from "react";
 import "../styles/Issue.css";
 
 export default function Createissue() {
-  const options = [
-    {
-      label: "High",
-      value: "High",
-    },
-    {
-      label: "Medium",
-      value: "Medium",
-    },
-    {
-      label: "Low",
-      value: "Low",
-    },
-  ];
   const [data, setData] = useState({
     projectname: "",
     issuename: "",
-    priority: "",
+    priority: "High",
     desc: "",
   });
 
   const handleClick = () => {
-    console.log(data.priority.value);
+    // console.log(data.priority.value);
     console.log(data);
     alert();
-  };
-
-  const inputevent = (event) => {
-    const { name, value } = event.target;
-    setData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
   };
 
   return (
@@ -49,7 +27,9 @@ export default function Createissue() {
             type="text"
             name="projectname"
             placeholder="Project Name"
-            onChange={inputevent}
+            onChange={(e) => {
+              setData({ ...data, projectname: e.target.value });
+            }}
           />
         </Form.Group>
         <Form.Group controlId="formBasicEmail">
@@ -58,12 +38,19 @@ export default function Createissue() {
             type="text"
             name="issuename"
             placeholder="Issue Name"
-            onChange={inputevent}
+            onChange={(e) => {
+              setData({ ...data, issuename: e.target.value });
+            }}
           />
         </Form.Group>
         <Form.Group controlId="exampleForm.ControlSelect1">
           <Form.Label>Priority</Form.Label>
-          <Form.Control as="select" name="priority">
+          <Form.Control
+            as="select"
+            onChange={(e) => {
+              setData({ ...data, priority: e.target.value });
+            }}
+          >
             <option value="High">High</option>
             <option value="Medium">Medium</option>
             <option value="Low">Low</option>
@@ -83,7 +70,9 @@ export default function Createissue() {
             name="desc"
             rows={4}
             placeholder="Description"
-            onChange={inputevent}
+            onChange={(e) => {
+              setData({ ...data, desc: e.target.value });
+            }}
           />
         </Form.Group>
 
