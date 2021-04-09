@@ -5,88 +5,89 @@ import { useState } from "react";
 import "../styles/Issue.css";
 
 export default function Createissue() {
-  const [projectname, setprojectname] = useState("");
-  const [issuename, setissuename] = useState("");
-  const [priority, setpriority] = useState("");
-  const [Description, setDescription] = useState("");
-  const [password, setPassword] = useState("");
-
+  const options = [
+    {
+      label: "High",
+      value: "High",
+    },
+    {
+      label: "Medium",
+      value: "Medium",
+    },
+    {
+      label: "Low",
+      value: "Low",
+    },
+  ];
   const [data, setData] = useState({
     projectname: "",
     issuename: "",
     priority: "",
-    Description: "",
-    password: "",
+    desc: "",
   });
 
-  const handleChange = () => {
-    setData({
-      projectname: projectname,
-      issuename: issuename,
-      priority: priority,
-      Description: Description,
-      password: password,
-    });
+  const handleClick = () => {
+    console.log(data.priority.value);
+    console.log(data);
+    alert();
+  };
 
-    alert(data.projectname);
-
-    setprojectname("");
-    setissuename("");
-    setpriority("");
-    setPassword("");
+  const inputevent = (event) => {
+    const { name, value } = event.target;
+    setData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   return (
     <div className="createissue-form">
-      <Form>
+      <Form onSubmit={handleClick}>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>First Name</Form.Label>
+          <Form.Label>Project Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="First Name"
-            // value={projectname}
-            onChange={(e) => setprojectname(e.target.value)}
+            name="projectname"
+            placeholder="Project Name"
+            onChange={inputevent}
           />
         </Form.Group>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Last Name</Form.Label>
+          <Form.Label>Issue Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Last Name"
-            // value={issuename}
-            onChange={(e) => setissuename(e.target.value)}
+            name="issuename"
+            placeholder="Issue Name"
+            onChange={inputevent}
           />
         </Form.Group>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>priority</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="priority"
-            // value={priority}
-            onChange={(e) => setpriority(e.target.value)}
-          />
+        <Form.Group controlId="exampleForm.ControlSelect1">
+          <Form.Label>Priority</Form.Label>
+          <Form.Control as="select" name="priority">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </Form.Control>
+          {/* <select name="priority">
+            {options.map((option) => (
+              <option value={option.value}>{option.label}</option>
+            ))} */}
+          {/* </select> */}
         </Form.Group>
-        <Form.Group controlId="formBasicEmail">
+
+        <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label>Description</Form.Label>
+
           <Form.Control
-            type="textarea"
+            as="textarea"
+            name="desc"
+            rows={4}
             placeholder="Description"
-            // value={Description}
-            onChange={(e) => setDescription(e.target.value)}
+            onChange={inputevent}
           />
         </Form.Group>
 
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            // value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-
-        <Button variant="primary" type="submit" onClick={handleChange}>
+        <Button variant="primary" type="submit">
           Submit
         </Button>
       </Form>
