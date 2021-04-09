@@ -51,7 +51,7 @@ export default function Createissue() {
               setData({ ...data, priority: e.target.value });
             }}
           >
-            <option value="High">High</option>
+            <option>High</option>
             <option value="Medium">Medium</option>
             <option value="Low">Low</option>
           </Form.Control>
