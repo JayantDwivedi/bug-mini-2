@@ -82,7 +82,36 @@ app.delete('/viewissue/:id', (req, res) => {
 });
 
 // updation Part
+app.put('/viewissue/:id', (req, res) => {
 
+  const id = req.params.id;
+
+  const proname = req.body.projectname;
+  const issname = req.body.issuename;
+  const prio = req.body.priority;
+  const descrip = req.body.desc;
+
+  Data.updateOne({
+    _id: id
+  }, {
+    $set: {
+      projectname: proname,
+      issuename: issname,
+      priority: prio,
+      desc: descrip
+    }
+  }).then((result) => {
+    console.log(result);
+    res.status(200).json({
+      msg: "Successfully updated"
+    })
+  }).catch((error) => {
+    console.log(error);
+    res.status(500).json({
+      msg: "Error Occured"
+    })
+  })
+})
 
 //server
 app.listen(5000, () => {
