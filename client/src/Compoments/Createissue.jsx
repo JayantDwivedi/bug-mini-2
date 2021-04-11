@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
 import "../styles/Issue.css";
+import axios from "axios";
 
 export default function Createissue() {
   const [data, setData] = useState({
@@ -13,9 +14,7 @@ export default function Createissue() {
   });
 
   const handleClick = () => {
-    // console.log(data.priority.value);
-    console.log(data);
-    alert();
+    axios.post("http://localhost:5000/createissue", data);
   };
 
   return (
@@ -55,11 +54,6 @@ export default function Createissue() {
             <option value="Medium">Medium</option>
             <option value="Low">Low</option>
           </Form.Control>
-          {/* <select name="priority">
-            {options.map((option) => (
-              <option value={option.value}>{option.label}</option>
-            ))} */}
-          {/* </select> */}
         </Form.Group>
 
         <Form.Group controlId="exampleForm.ControlTextarea1">

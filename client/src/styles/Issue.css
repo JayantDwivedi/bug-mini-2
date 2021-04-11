@@ -15,3 +15,25 @@
     background-color: rgb(238, 232, 232);
 
 }
+
+.view-area {
+    margin: 5% 5%;
+}
+
+.high {
+    border: red solid 2px;
+    background-color: rgb(255, 232, 232);
+    z-index: 1;
+}
+
+.low {
+    border: green solid 2px;
+    background-color: rgb(241, 252, 225);
+    z-index: 1;
+}
+
+.medium {
+    border: rgb(126, 126, 233) solid 2px;
+    background-color: rgb(219, 229, 245);
+    z-index: 1;
+}
