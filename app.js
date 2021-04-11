@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
-const User = require("./models/signup");
+const Data = require("./models/data");
 
 //db connections
 mongoose
@@ -25,34 +25,34 @@ app.use(cors());
 app.use(express.json());
 // routes
 
-app.get("/signin", (req, res) => {
-  User.find()
+app.get("/viewissue", (req, res) => {
+  Data.find()
     .exec()
     .then((result) => {
-      console.log(result);
-      res.status(200).json({ result });
+      res.json(result);
+
     })
     .catch((err) => {
       console.log(err);
     });
-  res.send("data");
+
+
 });
 
-app.post("/signup", (req, res) => {
+app.post("/createissue", (req, res) => {
   //   console.log(req.body.firstname);
   //   console.log(req.body.lastname);
   //   console.log(req.body.email);
   //   console.log(req.body.jobtitle);
   //   console.log(req.body.password);
-  const user = new User({
-    _id: new mongoose.Types.ObjectId(),
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-    email: req.body.email,
-    jobTitle: req.body.jobTitle,
-    password: req.body.password,
+  const data = new Data({
+    _id: new mongoose.Types.ObjectId,
+    projectname: req.body.projectname,
+    issuename: req.body.issuename,
+    priority: req.body.priority,
+    desc: req.body.desc,
   });
-  user
+  data
     .save()
     .then(() => {
       console.log("Data Saved");
@@ -62,6 +62,27 @@ app.post("/signup", (req, res) => {
     });
   res.send("Ok");
 });
+
+
+// For delete 
+app.delete('/viewissue/:id', (req, res) => {
+  const id = req.params.id;
+  Data.remove({
+    _id: id
+  }, (err, result) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send("Error Occured")
+    } else {
+      res.status(200).json({
+        msg: "Sucessfully deleted"
+      })
+    }
+  })
+});
+
+// updation Part
+
 
 //server
 app.listen(5000, () => {
