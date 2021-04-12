@@ -7,6 +7,7 @@ import Header from "./Compoments/Header";
 import Home from "./Compoments/Home";
 import Viewissue from "./Compoments/Viewissue";
 import Createissue from "./Compoments/Createissue";
+import Notfound from "./Compoments/Notfound";
 
 // importing side panel
 // import Sidepanel from "./Pages/Sidepanel";
@@ -20,7 +21,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/viewissue" exact component={Viewissue} />
           <Route path="/Createissue" exact component={Createissue} />
-          {/* <Route path="*" component={Notfound} /> */}
+          <Route path="*" exact component={Notfound} />
         </Switch>
         {/* <Sidepanel /> */}
       </div>

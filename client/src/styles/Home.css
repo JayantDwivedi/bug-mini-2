@@ -20,6 +20,17 @@
     background-color: #263239;
     color: #FCA312;
     border-radius: 30px;
+    align: center;
+}
+
+.notfound_img {
+    height: 80vh;
+}
+
+.notfound_container {
+    height: 80vh;
+    margin: 5% 5%;
+    display: block;
 }
 
 .btn-getstarted:hover {
@@ -28,6 +39,8 @@
     background-color: white;
     color: #263239;
     border-radius: 30px;
+    text-transform: none;
+    text-decoration: none;
 }
 
 main {
