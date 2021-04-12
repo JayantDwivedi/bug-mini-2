@@ -18,22 +18,25 @@
 
 .view-area {
     margin: 5% 5%;
+    display: inline-block;
 }
 
-.high {
+.High {
     border: red solid 2px;
     background-color: rgb(255, 232, 232);
     z-index: 1;
 }
 
-.low {
+.Low {
     border: green solid 2px;
     background-color: rgb(241, 252, 225);
     z-index: 1;
 }
 
-.medium {
+.Medium {
     border: rgb(126, 126, 233) solid 2px;
     background-color: rgb(219, 229, 245);
     z-index: 1;
 }
+
+.mycard {}
