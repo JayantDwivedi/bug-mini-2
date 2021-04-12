@@ -37,26 +37,24 @@ const Viewissue = () => {
 
   const renderData = (value, index) => {
     return (
-      <div key={index} className="row">
-        <Card style={{ width: "18rem" }} className={`mycard ${value.priority}`}>
-          <Card.Body>
-            <Card.Title> Project Name :{value.projectname} </Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              Issue Name : {value.issuename}
-            </Card.Subtitle>
-            <Card.Subtitle className="mb-2 text-muted">
-              Priority: {value.priority}
-            </Card.Subtitle>
-            <Card.Text>Desc: {value.desc}</Card.Text>
-            <Card.Link href="#" className="btn btn-danger">
-              Card Link
-            </Card.Link>
-            <Card.Link href="#" className="btn btn-warning">
-              Another Link
-            </Card.Link>
-          </Card.Body>
-        </Card>
-      </div>
+      <Card key={index} className={`mycards ${value.priority}`}>
+        <Card.Body>
+          <Card.Title> Project Name :{value.projectname} </Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">
+            Issue Name : {value.issuename}
+          </Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted">
+            Priority: {value.priority}
+          </Card.Subtitle>
+          <Card.Text>Desc: {value.desc}</Card.Text>
+          <Card.Link href="#" className="btn btn-danger">
+            Card Link
+          </Card.Link>
+          <Card.Link href="#" className="btn btn-warning">
+            Another Link
+          </Card.Link>
+        </Card.Body>
+      </Card>
     );
   };
 

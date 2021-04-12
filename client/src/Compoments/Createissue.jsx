@@ -70,7 +70,7 @@ export default function Createissue() {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="warning" type="submit">
           Submit
         </Button>
       </Form>

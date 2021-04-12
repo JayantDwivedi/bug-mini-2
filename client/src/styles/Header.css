@@ -1,12 +1,12 @@
 .container-header {
     height: 10vh;
-    background-color: #FF7A59;
+    background-color: #FCA312;
 }
 
 .headingname {
     display: inline;
     margin-left: 38%;
-
+    color: rgb(24, 94, 117);
 }
 
 .header_icon {
@@ -19,8 +19,8 @@
 }
 
 .link-button {
-    background-color: #FFEDE9;
-    border-radius: 30px;
+    background-color: rgb(230, 224, 222);
+    border-radius: 15px;
     padding: 0.5rem;
     margin: 10px 10px;
     float: right;
@@ -29,6 +29,7 @@
     text-transform: none;
     text-decoration: none;
     color: #FF7A59;
+    transition: 0.8s;
 }
 
 .link-button:hover {
