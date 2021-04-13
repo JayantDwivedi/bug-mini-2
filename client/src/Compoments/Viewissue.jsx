@@ -10,6 +10,10 @@ import axios from "axios";
 const Viewissue = () => {
   const [data, setData] = useState({
     info: [],
+    uprojectname: "",
+    uissuename: "",
+    upriority: "High",
+    udesc: "",
   });
 
   const getData = () => {
@@ -45,15 +49,15 @@ const Viewissue = () => {
     });
   };
 
+  const handleUpdate = (id) => {
+    console.log(id);
+  };
+
   // Bootstrap models function and state
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const handleClick = () => {
-    console.log("clicked");
-  };
 
   const renderData = (value, index) => {
     return (
@@ -89,15 +93,17 @@ const Viewissue = () => {
             <Modal.Title>Bugs</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form onSubmit={handleClick}>
+            <Form>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Project Name</Form.Label>
                 <Form.Control
                   type="text"
                   name="projectname"
+                  defaultValue={value.projectname}
                   placeholder="Project Name"
                   onChange={(e) => {
-                    setData({ ...data, projectname: e.target.value });
+                    setData({ ...data, uprojectname: e.target.value });
+                    console.log(data.uprojectname);
                   }}
                 />
               </Form.Group>
@@ -107,8 +113,10 @@ const Viewissue = () => {
                   type="text"
                   name="issuename"
                   placeholder="Issue Name"
+                  defaultValue={value.issuename}
                   onChange={(e) => {
-                    setData({ ...data, issuename: e.target.value });
+                    setData({ ...data, uissuename: e.target.value });
+                    console.log(data.uissuename);
                   }}
                 />
               </Form.Group>
@@ -116,8 +124,10 @@ const Viewissue = () => {
                 <Form.Label>Priority</Form.Label>
                 <Form.Control
                   as="select"
+                  defaultValue={value.priority}
                   onChange={(e) => {
-                    setData({ ...data, priority: e.target.value });
+                    setData({ ...data, upriority: e.target.value });
+                    // console.log(upriority);
                   }}
                 >
                   <option>High</option>
@@ -133,9 +143,11 @@ const Viewissue = () => {
                   as="textarea"
                   name="desc"
                   rows={4}
+                  defaultValue={value.desc}
                   placeholder="Description"
                   onChange={(e) => {
-                    setData({ ...data, desc: e.target.value });
+                    setData({ ...data, udesc: e.target.value });
+                    console.log(data.udesc);
                   }}
                 />
               </Form.Group>
@@ -145,8 +157,12 @@ const Viewissue = () => {
             <Button variant="danger" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="success" onClick={handleClose}>
-              Save Changes
+            <Button
+              variant="success"
+              onSubmit={handleUpdate(value._id)}
+              onClick={handleClose}
+            >
+              Update
             </Button>
           </Modal.Footer>
         </Modal>
