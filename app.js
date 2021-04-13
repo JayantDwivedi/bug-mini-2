@@ -67,7 +67,7 @@ app.post("/createissue", (req, res) => {
 // For delete 
 app.delete('/viewissue/:id', (req, res) => {
   const id = req.params.id;
-  Data.remove({
+  Data.deleteOne({
     _id: id
   }, (err, result) => {
     if (err) {
