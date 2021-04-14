@@ -10,7 +10,7 @@ export default function Home() {
         <p className="para">Catch all the Bugs</p>
         <br />
         <p className="para">Collaborate with your team</p>
-        <Link to="/signin">
+        <Link to="/createissue">
           <button className="btn-getstarted">Get Started</button>
         </Link>
       </main>
